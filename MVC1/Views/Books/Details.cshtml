@@ -1,0 +1,46 @@
+﻿ @* @model MVC1.Models.Book;  *@
+
+@* @{ *@
+@* 	var currentBook = Model; *@
+@* } *@
+
+@* @if (currentBook.Price > 100) *@
+@* { *@
+@* 	<h2>Expensive Book</h2> *@
+@* } *@
+@* else *@
+@* { *@
+@* 	<h2>Cheap Book</h2> *@
+@* } *@
+
+@* <p>Name: @currentBook.Title</p> *@
+@* <p>Author: @currentBook.Author</p> *@
+@* <p>Published at: @currentBook.PublishedYear</p> *@
+
+@model List<Book>
+
+<h2 class="mb-4">Book List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Add" class="btn btn-primary">Add New Book</a>

@@ -1,0 +1,35 @@
+﻿@* @model List<Book>; *@
+
+@* @{ *@
+@* 	// Layout = "_MyCustomLayout"; *@
+@* } *@
+
+@* @{ *@
+@* 	var totalCount = Model.Count; *@
+@* } *@
+@* <p>@(Model.Count > 10 ? "Big List" : "Small List")</p> *@
+@* @foreach (var book in Model) *@
+@* { *@
+@* 	<p>Name: @(book.Title)</p> *@
+@* 	@Html.Raw(book.Markup) *@
+@* } *@
+@* @Model.Count *@
+
+@* @if (Model.First().Price > 100) *@
+@* { *@
+@* 	<p>Expensive</p> *@
+@* } *@
+@* else *@
+@* { *@
+@* 	<p>Cheap</p> *@
+@* } *@
+
+@* @foreach (var book in Model) *@
+@* { *@
+@* 	<p>@book.Title</p> *@
+@* 	@Html.Raw(book.Markup) *@
+@* } *@
+@* <h1>Hello From Books Controller</h1> *@
+@* @* // @@ skip C# *@ 
+@* <p>Total Books count: @Model.Count</p> *@
+

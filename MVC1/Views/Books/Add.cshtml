@@ -1,0 +1,47 @@
+﻿@model AddBookDto;
+
+@* form to be submitted to books
+tag helper asp-action="Add"
+will generate the URL 
+to the Add action in the BooksController
+*@
+
+
+<h2 class="mb-4">Add a New Book</h2>
+
+<form asp-action="Add" method="post" class="needs-validation">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Book Name</label>
+        <input asp-for="Name" class="form-control" placeholder="Enter book name" required />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Author" class="form-label">Author</label>
+        <input asp-for="Author" class="form-control" placeholder="Enter author's name" required />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label">Price</label>
+        <input asp-for="Price" type="number" class="form-control" placeholder="Enter book price" required />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Book</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+@* @section Scripts{ *@
+	@* 	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script> *@
+	@* <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script> *@
+
+	@* <script> *@
+	@* 	console.log("Hello from Add.cshtml"); *@
+	@* </script> *@
+	@* <partial name="_ValidationScriptsPartial" /> *@
+@* } *@
